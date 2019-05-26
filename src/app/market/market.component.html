@@ -1,0 +1,64 @@
+<div class="row">
+
+  <div class="col-md-3">
+    <!--Filter genres-->
+    <div class="container">
+      <div class="card border-info">
+        <form class="card-body" action="">
+          <h5 class="card-title">Genres</h5>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="horror"
+                 placeholder="Horror"/>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="fan"
+                 placeholder="Fan"/>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="lorem"
+                 placeholder="Lorem"/>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="lorem"
+                 placeholder="Lorem"/>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="lorem"
+                 placeholder="Lorem"/>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="lorem"
+                 placeholder="Lorem"/>
+          <input type="submit" class="btn m-1 btn-light btn-outline-info" name="genre" value="lorem"
+                 placeholder="Lorem"/>
+        </form>
+      </div>
+    </div>
+    <!--Filter genres End-->
+    <!--Filter cost etc.-->
+    <div class="container mt-1">
+      <div class="card border-info">
+        <form class="card-body" action="">
+          <h5 class="card-title">Sort by</h5>
+          <label>
+            <select name="sortBy"  class="form-control custom-select" >
+              <option value="cost" class="custom-control-inline">Best Math</option>
+              <option value="cost" class="custom-control-inline">Best Sellers</option>
+              <option value="cost" class="custom-control-inline">Price: lowest first</option>
+              <option value="cost" class="custom-control-inline">Price: highest first</option>
+            </select>
+          </label>
+        </form>
+      </div>
+    </div>
+    <!--Filter cost etc. End-->
+
+  </div>
+
+  <div class="col-md-9 row">
+    <!--Array of books-->
+    <div *ngFor="let book of books" class="container col-md-3 m-4">
+      <div class="card border-primary" style="width: 18rem;">
+        <img class="card-img-top"
+             src="https://picsum.photos/286/180?grayscale"
+             alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{book.name}}</h5>
+          <p class="card-text">{{book.value}} <br>  Price: {{book.cost}} </p>
+          <a href="#" class="btn btn-primary"> Read Snippet</a>
+        </div>
+      </div>
+    </div>
+    <!--Array of books End-->
+  </div>
+
+</div>

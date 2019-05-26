@@ -1,0 +1,22 @@
+<p>
+  statistic works!
+</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Num of Read</th>
+    <th>Progress</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books; index as i">
+    <th>{{i + 1}}</th>
+    <td>{{book.value}}</td>
+    <td>
+      <ngb-progressbar animated="true" striped="true" type="success" value="{{book.value}}"
+                       max="10000">{{book.name}}</ngb-progressbar>
+    </td>
+  </tr>
+  </tbody>
+</table>
