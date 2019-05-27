@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,12 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
   isCollapsed = true;
+  isAuth = true;
 
-  constructor() {
+  constructor(private modalAuth: NgbModal) {
   }
 
+  open(content) {
+    this.modalAuth.open(content);
+  }
 }
