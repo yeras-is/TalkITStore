@@ -9,7 +9,7 @@
   <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="index">Home</a>
+        <a class="nav-link" routerLink="home">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="market">Market</a>
@@ -25,10 +25,10 @@
     </form>
     <ul class="navbar-nav m-auto">
       <li class="nav-item m-1">
-        <button class="btn btn-outline-light" (click)="open(content)">Auth</button>
+        <button class="btn btn-outline-light" (click)="open(content); isAuth=true">Auth</button>
       </li>
       <li class="nav-item m-1">
-        <button class="btn btn-outline-danger" (click)="open(content); isAuth=!isAuth" >Registration</button>
+        <button class="btn btn-outline-success" (click)="open(content); isAuth=false" >Registration</button>
       </li>
     </ul>
   </div>

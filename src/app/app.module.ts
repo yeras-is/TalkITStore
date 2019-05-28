@@ -8,15 +8,15 @@ import {NewServiceService} from './new-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import {IndexComponent} from './index/index.component';
+import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {MarketComponent} from './market/market.component';
 import {AboutComponent} from './about/about.component';
 import {StatisticComponent} from './statistic/statistic.component';
 
 const appRoutes: Routes = [
-  {path: '', component: IndexComponent},
-  {path: 'index', component: IndexComponent},
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'market', component: MarketComponent},
   {path: 'about', component: AboutComponent},
   {path: 'stat', component: StatisticComponent},
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
+    HomeComponent,
     NotFoundComponent,
     MarketComponent,
     AboutComponent,
