@@ -27,3 +27,10 @@
     </td>
   </tr>
 </table>
+
+<h1># Front-end</h1>
+<h3>Market Page</h3>
+<img style="height=" src="Readme\images\Market.jpg"/>
+<p>Here you can see actual books, can sort them by genre, cost, popular, etc.
+Page c
+</p>

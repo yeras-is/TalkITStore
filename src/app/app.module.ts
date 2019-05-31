@@ -10,14 +10,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
-import {MarketComponent} from './market/market.component';
+import {BooksComponent} from './books/books.component';
 import {AboutComponent} from './about/about.component';
 import {StatisticComponent} from './statistic/statistic.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'market', component: MarketComponent},
+  {path: 'books', component: BooksComponent},
   {path: 'about', component: AboutComponent},
   {path: 'stat', component: StatisticComponent},
   {path: '**', component: NotFoundComponent},
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    MarketComponent,
+    BooksComponent,
     AboutComponent,
     StatisticComponent,
   ],

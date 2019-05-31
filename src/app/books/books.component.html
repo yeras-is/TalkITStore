@@ -1,6 +1,7 @@
 <div class="row">
 
   <div class="col-md-3">
+
     <!--Filter genres-->
     <div class="container">
       <div class="card border-info">
@@ -24,6 +25,7 @@
       </div>
     </div>
     <!--Filter genres End-->
+
     <!--Filter cost etc.-->
     <div class="container mt-1">
       <div class="card border-info">
@@ -45,6 +47,7 @@
   </div>
 
   <div class="col-md-9 row">
+
     <!--Array of books-->
     <div *ngFor="let book of books" class="container col-md-3 m-4">
       <div class="card border-primary" style="width: 18rem;">
@@ -53,12 +56,13 @@
              alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{book.name}}</h5>
-          <p class="card-text">{{book.value}} <br><b>Price: {{book.cost}}</b> </p>
+          <p class="card-text">{{book.about}} <br><b>Price: {{book.cost}}</b> </p>
           <a href="#" class="btn btn-primary"> Read Snippet</a>
         </div>
       </div>
     </div>
     <!--Array of books End-->
+
   </div>
 
 </div>
