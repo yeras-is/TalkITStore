@@ -1,0 +1,15 @@
+create user admin with password 'password';
+
+create database store_it owner admin;
+
+create table if not exists books(
+                                    id serial primary key ,
+                                    name varchar(32),
+                                    author varchar(32),
+                                    snippet text,
+                                    path varchar(32),
+                                    cost int,
+                                    genre varchar(32),
+                                    actual boolean default true
+);
+
