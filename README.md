@@ -17,12 +17,14 @@
       <ol type="point">
         <li>HTML+CSS+JS</li>
         <li>Angular 7</li>
+        <li>Current branch</li>
       </ol>
     </td>
     <td>
       <ol>
         <li>Spring MVC</li>
         <li>Postgres DB</li>
+        <li>Check other branch</li>
       </ol>
     </td>
   </tr>
