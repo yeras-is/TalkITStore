@@ -1,4 +1,26 @@
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, corporis ea eum, incidunt itaque numquam obcaecati odio quae sit tempore voluptate voluptatem. Ab, aliquam amet beatae consectetur, distinctio, ea enim hic laboriosam magnam neque nesciunt nobis nulla omnis optio placeat repellendus sint tempora vero. Aperiam, aspernatur debitis dignissimos doloremque esse ipsam magnam obcaecati porro possimus praesentium quaerat repudiandae sint sit. Earum eligendi fuga fugiat id illum modi molestiae nam nisi, nostrum perferendis placeat rem. Dicta dolorem doloribus magni natus porro saepe similique ullam voluptates. Delectus deleniti eligendi esse, ex, explicabo impedit iure quasi quia reiciendis saepe similique soluta, veritatis vitae.
-</p>
+<div class="container align-content-center">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <img [src]="images[0]" alt="Random first slide">
+      <div class="carousel-caption">
+        <h3>Anne Of Green Gables</h3>
+        <p>“Tomorrow is always fresh, with no mistakes in it yet.”</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img [src]="images[1]" alt="Random second slide">
+      <div class="carousel-caption">
+        <h3>Willa Cather</h3>
+        <p>“At any rate, that is happiness; to be dissolved into something complete and great.”</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img [src]="images[2]" alt="Random third slide">
+      <div class="carousel-caption">
+        <h3>J.K. Rowling</h3>
+        <p>You will become way less concerned with what other people think of you when you realize how seldom they do.”</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 
+</div>
