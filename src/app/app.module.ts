@@ -13,6 +13,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {BooksComponent} from './books/books.component';
 import {AboutComponent} from './about/about.component';
 import {StatisticComponent} from './statistic/statistic.component';
+import {BooksService} from './service/books.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgbModule
   ],
-  providers: [NewServiceService],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

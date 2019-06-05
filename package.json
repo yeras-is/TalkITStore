@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "start": "ng serve --proxy-config proxy.config.json",
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",

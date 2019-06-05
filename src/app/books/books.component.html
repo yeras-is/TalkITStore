@@ -32,11 +32,11 @@
         <form class="card-body" action="">
           <h5 class="card-title">Sort by</h5>
           <label>
-            <select name="sortBy"  class="form-control custom-select" >
-              <option value="cost" class="custom-control-inline">Best Math</option>
-              <option value="cost" class="custom-control-inline">Best Sellers</option>
-              <option value="cost" class="custom-control-inline">Price: lowest first</option>
-              <option value="cost" class="custom-control-inline">Price: highest first</option>
+            <select name="sortBy"  class="form-control custom-select">
+              <option value="match" class="custom-control-inline" >Best Match</option>
+              <option value="sellers" class="custom-control-inline">Best Sellers</option>
+              <option value="lowest" class="custom-control-inline" >Price: lowest first</option>
+              <option value="highest" class="custom-control-inline">Price: highest first</option>
             </select>
           </label>
         </form>
@@ -52,11 +52,15 @@
     <div *ngFor="let book of books" class="container col-md-3 m-4">
       <div class="card border-primary" style="width: 18rem;">
         <img class="card-img-top"
-             src="https://picsum.photos/286/180?grayscale"
+             src="https://picsum.photos/286/180?random={{book.id}}"
              alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{book.name}}</h5>
-          <p class="card-text">{{book.about}} <br><b>Price: {{book.cost}}</b> </p>
+          <p class="card-text">
+            {{book.snippet}}
+            <br><b>Price: {{book.cost}}</b>
+            <br><b>Genre: {{book.genre}}</b>
+          </p>
           <a href="#" class="btn btn-primary"> Read Snippet</a>
         </div>
       </div>
