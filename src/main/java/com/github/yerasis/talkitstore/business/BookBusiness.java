@@ -3,6 +3,8 @@ package com.github.yerasis.talkitstore.business;
 import com.github.yerasis.talkitstore.model.Book;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface BookBusiness {
 
@@ -10,11 +12,10 @@ public interface BookBusiness {
 
   Book getBook(int id);
 
-  Iterable<Book> getBooksByGenre(String genre);
+  List<Book> getBooksByGenre(String genre, int offset, String sortType);
 
   int deleteBook(int id);
 
   int updateBook(Book book);
-
 
 }

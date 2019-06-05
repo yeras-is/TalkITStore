@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
 public class BookRepositoryImpl implements BooksRepository {
   private final JdbcTemplate jdbc;
-
 
   @Override
   public int addBook(Book book) {
@@ -27,12 +27,11 @@ public class BookRepositoryImpl implements BooksRepository {
   }
 
   @Override
-  public Iterable<Book> getBooksByGenre(String genre) {
+  public List<Book> getBooksByGenre(String genre, int offset) {
     return (genre != null ?
-      jdbc.query("select * from books where genre=?", this::mapRowToBook, genre) :
-      jdbc.query("select * from books limit 100", this::mapRowToBook)
+      jdbc.query("select * from books where genre=? limit 15 offset ?", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from books", this::mapRowToBook)
     );
-
   }
 
   @Override
@@ -57,4 +56,5 @@ public class BookRepositoryImpl implements BooksRepository {
       rs.getInt("cost"),
       rs.getString("genre"));
   }
+
 }

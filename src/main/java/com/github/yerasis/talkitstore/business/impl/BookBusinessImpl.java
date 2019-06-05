@@ -3,14 +3,17 @@ package com.github.yerasis.talkitstore.business.impl;
 import com.github.yerasis.talkitstore.business.BookBusiness;
 import com.github.yerasis.talkitstore.model.Book;
 import com.github.yerasis.talkitstore.repository.BooksRepository;
+import com.github.yerasis.talkitstore.service.BookSort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class BookBusinessImpl implements BookBusiness {
   private final BooksRepository booksRepository;
-
+  private final BookSort bookSort;
 
   @Override
   public int addBook(Book book) {
@@ -24,10 +27,17 @@ public class BookBusinessImpl implements BookBusiness {
   }
 
   @Override
-  public Iterable<Book> getBooksByGenre(String genre) {
-    Iterable<Book> books = booksRepository.getBooksByGenre(genre);
-    //sort service goes here
-    return books;
+  public List<Book> getBooksByGenre(String genre, int offset, String sortType) {
+    List<Book> books = booksRepository.getBooksByGenre(genre, offset);
+    switch (sortType) {
+      case ("lowest"):
+        return bookSort.sortByCostLowest(books);
+      case ("highest") :
+        return bookSort.sortByCostLowest(books);
+      default:
+        return books;
+    }
+
   }
 
   @Override

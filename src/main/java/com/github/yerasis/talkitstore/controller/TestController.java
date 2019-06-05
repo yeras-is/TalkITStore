@@ -8,7 +8,7 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/test")
 public class TestController {
-  public Map<Integer, String> test = new HashMap<Integer, String>() {{
+  private Map<Integer, String> test = new HashMap<Integer, String>() {{
     put(1, "Test");
     put(2, "TEST");
     put(3, "test");
