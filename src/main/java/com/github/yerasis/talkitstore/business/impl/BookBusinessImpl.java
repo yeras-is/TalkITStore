@@ -32,12 +32,10 @@ public class BookBusinessImpl implements BookBusiness {
     switch (sortType) {
       case ("lowest"):
         return bookSort.sortByCostLowest(books);
-      case ("highest") :
-        return bookSort.sortByCostLowest(books);
-      default:
-        return books;
+      case ("highest"):
+        //return bookSort.sortByCostHighest(books);
     }
-
+    return books;
   }
 
   @Override
