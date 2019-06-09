@@ -1,19 +1,17 @@
 package com.github.yerasis.talkitstore.controller;
 
-import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.github.yerasis.talkitstore.service.MailService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/test")
+@RequiredArgsConstructor
 public class TestController {
-  private Map<Integer, String> test = new HashMap<Integer, String>() {{
-    put(1, "Test");
-    put(2, "TEST");
-    put(3, "test");
-    put(4, "TeSt");
-  }};
+  private final MailService mailService;
+/*
 
   @GetMapping
   public Map<Integer, String> test() {
@@ -24,13 +22,14 @@ public class TestController {
   public String putTest(@PathVariable Integer id) {
     return ((test.get(id) == null) ? "N/A" : test.get(id));
   }
+*/
 
   @PostMapping
-  private Map<Integer,String> create(@RequestParam Integer id, String name ){
-    test.put(id,name);
-    return test;
+  private Boolean mail(String to, String subject, String text) {
+    return mailService.sendMessage(to, subject, text);
   }
 
+/*
   @DeleteMapping
   private String delete(@RequestParam Integer id){
     if(test.containsKey(id)){
@@ -42,4 +41,5 @@ public class TestController {
       return "Not such key\n"+test.toString();
     }
   }
+*/
 }
