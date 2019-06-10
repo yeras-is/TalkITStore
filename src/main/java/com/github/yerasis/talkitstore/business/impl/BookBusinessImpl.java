@@ -31,9 +31,9 @@ public class BookBusinessImpl implements BookBusiness {
     List<Book> books = booksRepository.getBooksByGenre(genre, offset);
     switch (sortType) {
       case ("lowest"):
-        return bookSort.sortByCostLowest(books);
+        return bookSort.sortByCostAscending(books);
       case ("highest"):
-        //return bookSort.sortByCostHighest(books);
+
     }
     return books;
   }
