@@ -25,6 +25,15 @@ public class BookSort {
     return books;
   }
 
-
+  public List<Book> sortByCostAscending (List <Book> books){//сортирует цену по возростанию
+    if (books.isEmpty()) {
+      throw new NullPointerException("Can't sort empty List");
+    }
+    Collections.sort(books, new Comparator<Book>() {
+      public int compare(Book one, Book other) {
+        return one.getCost().compareTo( other.getCost() );
+      }
+    }
+  }
 
 }
