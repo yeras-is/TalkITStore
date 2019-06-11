@@ -1,7 +1,7 @@
 package com.github.yerasis.talkitstore.service;
 
 import com.github.yerasis.talkitstore.model.Book;
-import org.springframework.stereotype.Service;
+
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -30,16 +30,24 @@ public class BookSort {
 
 
   public List<Book> sortByCostAscending(List<Book> books) {//сортирует цену по возростанию
-    if (books.isEmpty()) {
-      throw new NullPointerException("Can't sort empty List");
+        if (books.isEmpty()) {
+            throw new NullPointerException("Can't sort empty List");
+        }
+        Collections.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book one, Book other) {
+                return one.getCost().compareTo(other.getCost());
+            }
+        });
+        return books;
     }
-    Collections.sort(books, new Comparator<Book>() {
-      @Override
-      public int compare(Book one, Book other) {
-        return one.getCost().compareTo(other.getCost());
-      }
-    });
-    return books;
-  }
+    public List<Book> sortByCostDescending(List<Book> books) {//сортирует цену по убыванию
+        if (books.isEmpty()) {
+            throw new NullPointerException("Can't sort empty List");
+        }
+        sortByCostAscending( books );
+        Collections.reverse(books);
+        return books ;
+    }
 
 }
