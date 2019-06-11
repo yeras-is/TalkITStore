@@ -24,10 +24,10 @@ public class TestController {
   }
 */
 
-  @PostMapping
-  private Boolean mail(String to, String subject, String text) {
-    return mailService.sendMessage(to, subject, text);
-  }
+    @PostMapping
+    private Boolean mail(String to, String subject, String text) {
+        return mailService.sendMessage(to, subject, text);
+    }
 
 /*
   @DeleteMapping
