@@ -34,6 +34,7 @@ public class BookRepositoryImpl implements BooksRepository {
     );
   }
 
+  @Override
   public List<Book> getBooksByGenreAndPopularity(String genre, int offset){
     return (genre != null ?
       jdbc.query("select * from books where genre=? order by popularity limit 15 offset ? ", this::mapRowToBook, genre,offset) :
@@ -41,6 +42,7 @@ public class BookRepositoryImpl implements BooksRepository {
     );
   }
 
+  @Override
   public List<Book> getBooksByGenreAndCostAscending(String genre, int offset){
     return (genre != null ?
       jdbc.query("select * from books where genre=? order by cost limit 15 offset ? ", this::mapRowToBook, genre,offset) :
@@ -48,10 +50,11 @@ public class BookRepositoryImpl implements BooksRepository {
     );
   }
 
+  @Override
   public List<Book> getBooksByGenreAndCostDescending(String genre, int offset){
     return (genre != null ?
-      jdbc.query("select * from books where genre=? order by cost limit 15 offset ? ", this::mapRowToBook, genre,offset) :
-      jdbc.query("select * from books order by cost", this::mapRowToBook)
+      jdbc.query("select * from books where genre=? order by cost DESC limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from books order by cost DESC ", this::mapRowToBook)
     );
   }
 

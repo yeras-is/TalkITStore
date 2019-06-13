@@ -28,14 +28,16 @@ public class BookBusinessImpl implements BookBusiness {
 
   @Override
   public List<Book> getBooksByGenre(String genre, int offset, String sortType) {
-    List<Book> books = booksRepository.getBooksByGenre(genre, offset);
     switch (sortType) {
       case ("lowest"):
-        return bookSort.sortByCostAscending(books);
+        return booksRepository.getBooksByGenreAndCostAscending(genre,offset);
       case ("highest"):
-
+        return booksRepository.getBooksByGenreAndCostDescending(genre, offset);
+      case ("popularity"):
+        return booksRepository.getBooksByGenreAndPopularity(genre, offset);
+      default:
+        return booksRepository.getBooksByGenre(genre, offset);
     }
-    return books;
   }
 
   @Override

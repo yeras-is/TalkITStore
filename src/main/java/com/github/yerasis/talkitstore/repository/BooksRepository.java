@@ -12,10 +12,17 @@ public interface BooksRepository {
 
   Book getBook(int id);
 
-  List<Book> getBooksByGenre(String genre,int offset);
+  List<Book> getBooksByGenre(String genre, int offset);
+
+  List<Book> getBooksByGenreAndPopularity(String genre, int offset);
+
+  List<Book> getBooksByGenreAndCostDescending(String genre, int offset);
+
+  List<Book> getBooksByGenreAndCostAscending(String genre, int offset);
 
   int deleteBook(int id);
 
   int updateBook(Book book);
+
 
 }

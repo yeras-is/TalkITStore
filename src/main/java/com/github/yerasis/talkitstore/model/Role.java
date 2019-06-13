@@ -1,8 +1,6 @@
 package com.github.yerasis.talkitstore.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+/*
 
 @RequiredArgsConstructor
 @NoArgsConstructor
@@ -14,3 +12,4 @@ public class Role {
   private Boolean isCreator;
   //add additional vars in future
 }
+*/
