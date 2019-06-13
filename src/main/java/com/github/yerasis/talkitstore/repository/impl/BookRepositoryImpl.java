@@ -34,6 +34,27 @@ public class BookRepositoryImpl implements BooksRepository {
     );
   }
 
+  public List<Book> getBooksByGenreAndPopularity(String genre, int offset){
+    return (genre != null ?
+      jdbc.query("select * from books where genre=? order by popularity limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from books order by popularity", this::mapRowToBook)
+    );
+  }
+
+  public List<Book> getBooksByGenreAndCostAscending(String genre, int offset){
+    return (genre != null ?
+      jdbc.query("select * from books where genre=? order by cost limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from books order by cost", this::mapRowToBook)
+    );
+  }
+
+  public List<Book> getBooksByGenreAndCostDescending(String genre, int offset){
+    return (genre != null ?
+      jdbc.query("select * from books where genre=? order by cost limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from books order by cost", this::mapRowToBook)
+    );
+  }
+
   @Override
   public int deleteBook(int id) {
     return jdbc.update("update books set actual=false where id=?", id);

@@ -1,7 +1,7 @@
 package com.github.yerasis.talkitstore.service;
 
 import com.github.yerasis.talkitstore.model.Book;
-
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.Comparator;
