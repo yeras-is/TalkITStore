@@ -3,7 +3,7 @@ package com.github.yerasis.talkitstore.business.impl;
 import com.github.yerasis.talkitstore.business.BookBusiness;
 import com.github.yerasis.talkitstore.model.Book;
 import com.github.yerasis.talkitstore.repository.BooksRepository;
-import com.github.yerasis.talkitstore.service.BookSort;
+import com.github.yerasis.talkitstore.service.Impl.BookSort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +34,7 @@ public class BookBusinessImpl implements BookBusiness {
       case ("highest"):
         return booksRepository.getBooksByGenreAndCostDescending(genre, offset);
       case ("popularity"):
-        return booksRepository.getBooksByGenreAndPopularity(genre, offset);
+        return booksRepository.getBooksByGenreAndPopularityAscending(genre, offset);
       default:
         return booksRepository.getBooksByGenre(genre, offset);
     }

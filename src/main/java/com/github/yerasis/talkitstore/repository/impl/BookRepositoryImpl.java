@@ -17,55 +17,56 @@ public class BookRepositoryImpl implements BooksRepository {
 
   @Override
   public int addBook(Book book) {
-    return jdbc.update("insert into books (name, author, snippet, path, cost,genre) values (?,?,?,?,?,?)",
+    return jdbc.update("insert into book (name, author, snippet, path, cost,genre) values (?,?,?,?,?,?)",
       book.getName(), book.getAuthor(), book.getSnippet(), book.getPath(), book.getCost(), book.getGenre());
   }
 
   @Override
   public Book getBook(int id) {
-    return jdbc.queryForObject("select * from books where id=?", this::mapRowToBook, id);
+    return jdbc.queryForObject("select * from book where id=?", this::mapRowToBook, id);
   }
 
   @Override
   public List<Book> getBooksByGenre(String genre, int offset) {
     return (genre != null ?
-      jdbc.query("select * from books where genre=? limit 15 offset ?", this::mapRowToBook, genre,offset) :
-      jdbc.query("select * from books", this::mapRowToBook)
+      jdbc.query("select * from book where genre=? limit 15 offset ?", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from book limit 15 offset ?", this::mapRowToBook,offset)
     );
   }
 
   @Override
-  public List<Book> getBooksByGenreAndPopularity(String genre, int offset){
+  public List<Book> getBooksByGenreAndPopularityAscending(String genre, int offset){
     return (genre != null ?
-      jdbc.query("select * from books where genre=? order by popularity limit 15 offset ? ", this::mapRowToBook, genre,offset) :
-      jdbc.query("select * from books order by popularity", this::mapRowToBook)
+      jdbc.query("select * from book where genre=? order by popularity limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from book order by popularity limit 15 offset ?", this::mapRowToBook,offset)
     );
   }
+
 
   @Override
   public List<Book> getBooksByGenreAndCostAscending(String genre, int offset){
     return (genre != null ?
-      jdbc.query("select * from books where genre=? order by cost limit 15 offset ? ", this::mapRowToBook, genre,offset) :
-      jdbc.query("select * from books order by cost", this::mapRowToBook)
+      jdbc.query("select * from book where genre=? order by cost limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from book order by cost limit 15 offset ?", this::mapRowToBook,offset)
     );
   }
 
   @Override
   public List<Book> getBooksByGenreAndCostDescending(String genre, int offset){
     return (genre != null ?
-      jdbc.query("select * from books where genre=? order by cost DESC limit 15 offset ? ", this::mapRowToBook, genre,offset) :
-      jdbc.query("select * from books order by cost DESC ", this::mapRowToBook)
+      jdbc.query("select * from book where genre=? order by cost DESC limit 15 offset ? ", this::mapRowToBook, genre,offset) :
+      jdbc.query("select * from book order by cost DESC limit 15 offset ? ", this::mapRowToBook,offset)
     );
   }
 
   @Override
   public int deleteBook(int id) {
-    return jdbc.update("update books set actual=false where id=?", id);
+    return jdbc.update("update book set actual=false where id=?", id);
   }
 
   @Override
   public int updateBook(Book book) {
-    return jdbc.update("update books set name=?, author=?, snippet=?, path=?, cost=?, genre=? where id=?",
+    return jdbc.update("update book set name=?, author=?, snippet=?, path=?, cost=?, genre=? where id=?",
       book.getName(), book.getAuthor(), book.getSnippet(), book.getPath(), book.getCost(), book.getGenre(), book.getId());
   }
 

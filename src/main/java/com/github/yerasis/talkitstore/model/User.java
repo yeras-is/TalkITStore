@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,13 +20,13 @@ public class User {
   private String lastName;
   @NotBlank(message = "Role is required")
   private String role;
+  @Email
   @NotBlank(message = "Email is required")
   private String email;
   @NotBlank(message = "Phone is required")
   private String phone;
-
   private Integer cash;
-
   private Boolean actual;
-
+  @Size(max = 16)
+  private String password;
 }

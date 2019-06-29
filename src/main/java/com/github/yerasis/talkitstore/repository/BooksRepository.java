@@ -14,7 +14,7 @@ public interface BooksRepository {
 
   List<Book> getBooksByGenre(String genre, int offset);
 
-  List<Book> getBooksByGenreAndPopularity(String genre, int offset);
+  List<Book> getBooksByGenreAndPopularityAscending(String genre, int offset);
 
   List<Book> getBooksByGenreAndCostDescending(String genre, int offset);
 

@@ -1,13 +1,13 @@
-package com.github.yerasis.talkitstore.repository;
+package com.github.yerasis.talkitstore.business;
 
 import com.github.yerasis.talkitstore.model.User;
 
 import java.util.List;
 import java.util.Map;
 
-public interface UserRepository {
+public interface UserBusiness {
 
-  int addUser(User user);
+  int addUser(User book);
 
   User getUser(int id);
 
@@ -15,5 +15,6 @@ public interface UserRepository {
 
   int deleteUser(int id);
 
-  int updateUser(User user);
+  int updateUser(User book);
+
 }

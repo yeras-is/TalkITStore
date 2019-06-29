@@ -1,9 +1,8 @@
 package com.github.yerasis.talkitstore.controller;
 
+import com.github.yerasis.talkitstore.model.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -12,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UserController {
 
+  @GetMapping
+  public User getUser(@PathVariable int id) {
+    return new User();
+  }
 
 
 }

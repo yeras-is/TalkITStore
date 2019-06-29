@@ -1,6 +1,6 @@
 package com.github.yerasis.talkitstore.controller;
 
-import com.github.yerasis.talkitstore.service.MailService;
+import com.github.yerasis.talkitstore.service.Impl.MailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/test")
 @RequiredArgsConstructor
 public class TestController {
-  private final MailService mailService;
+  private final MailServiceImpl mailService;
 /*
 
   @GetMapping

@@ -13,3 +13,16 @@ create table if not exists books(
                                     actual boolean default true
 );
 
+create table if not exists "user"
+(
+    id             serial primary key,
+    firstName      varchar(32),
+    lastName       varchar(32),
+    role           varchar(32),
+    email          varchar(32),
+    phone          varchar(32),
+    achievementsId integer,
+    cash           integer,
+    actual         boolean,
+    password       varchar(32)
+);
