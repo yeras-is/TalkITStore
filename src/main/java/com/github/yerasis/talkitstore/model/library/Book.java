@@ -1,4 +1,4 @@
-package com.github.yerasis.talkitstore.model;
+package com.github.yerasis.talkitstore.model.library;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

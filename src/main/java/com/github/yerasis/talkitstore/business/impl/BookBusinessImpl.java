@@ -1,7 +1,7 @@
 package com.github.yerasis.talkitstore.business.impl;
 
 import com.github.yerasis.talkitstore.business.BookBusiness;
-import com.github.yerasis.talkitstore.model.Book;
+import com.github.yerasis.talkitstore.model.library.Book;
 import com.github.yerasis.talkitstore.repository.BooksRepository;
 import com.github.yerasis.talkitstore.service.Impl.BookSort;
 import lombok.RequiredArgsConstructor;

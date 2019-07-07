@@ -1,7 +1,7 @@
 package com.github.yerasis.talkitstore.service.Impl;
 
 
-import com.github.yerasis.talkitstore.model.User;
+import com.github.yerasis.talkitstore.model.social.User;
 import com.github.yerasis.talkitstore.service.MailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.MailException;

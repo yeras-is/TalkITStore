@@ -1,7 +1,7 @@
 package com.github.yerasis.talkitstore.business.impl;
 
 import com.github.yerasis.talkitstore.business.UserBusiness;
-import com.github.yerasis.talkitstore.model.User;
+import com.github.yerasis.talkitstore.model.social.User;
 import com.github.yerasis.talkitstore.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -13,27 +13,27 @@ public class UserBusinessImpl implements UserBusiness {
   private final UserRepository userRepository;
 
   @Override
-  public int addUser(User book) {
-    throw new IllegalArgumentException("not impl");
+  public int addUser(User user) {
+    return userRepository.addUser(user);
   }
 
   @Override
   public User getUser(int id) {
-    throw new IllegalArgumentException("not impl");
+    return userRepository.getUser(id);
   }
 
   @Override
   public List<User> getUsers(Map<String, Object> params) {
-    throw new IllegalArgumentException("not impl");
+    return userRepository.getUsers(params);
   }
 
   @Override
   public int deleteUser(int id) {
-    throw new IllegalArgumentException("not impl");
+    return userRepository.deleteUser(id);
   }
 
   @Override
-  public int updateUser(User book) {
-    throw new IllegalArgumentException("not impl");
+  public int updateUser(User user) {
+    return userRepository.updateUser(user);
   }
 }

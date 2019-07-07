@@ -1,6 +1,6 @@
 package com.github.yerasis.talkitstore.controller;
 
-import com.github.yerasis.talkitstore.model.User;
+import com.github.yerasis.talkitstore.model.social.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

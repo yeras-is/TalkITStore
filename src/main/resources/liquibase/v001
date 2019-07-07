@@ -26,3 +26,58 @@ create table if not exists "user"
     actual         boolean,
     password       varchar(32)
 );
+
+create table if not exists achievements(
+    id serial primary key,
+    name varchar(32),
+    count integer,
+    image varchar(64)
+);
+
+create table if not exists user_achievements(
+    id serial primary key ,
+    user_id integer,
+    achievements_id integer
+);
+
+alter table user_achievements
+    add constraint user_achievements
+        foreign key (user_id) references "user";
+
+alter table user_achievements
+    add constraint achievements_user
+        foreign key (achievements_id) references achievements;
+
+create table if not exists course
+(
+    id             serial primary key,
+    name           varchar(32),
+    descriptionEng text,
+    descriptionRus text,
+    imgPath        varchar(64)
+)
+
+create table if not exists lesson
+(
+    id          serial primary key,
+    name        varchar(32),
+    contentPath varchar(64),
+    description text,
+    tasks       text,
+    materials   text
+)
+
+create table if not exists course_lesson
+(
+    id        serial primary key,
+    course_id integer,
+    lesson_id integer
+)
+
+alter table course_lesson
+    add constraint course_lesson
+        foreign key (course_id) references course;
+
+alter table course_lesson
+    add constraint lesson_course
+        foreign key (lesson_id) references lesson;

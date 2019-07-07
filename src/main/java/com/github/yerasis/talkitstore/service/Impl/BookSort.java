@@ -1,6 +1,6 @@
 package com.github.yerasis.talkitstore.service.Impl;
 
-import com.github.yerasis.talkitstore.model.Book;
+import com.github.yerasis.talkitstore.model.library.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

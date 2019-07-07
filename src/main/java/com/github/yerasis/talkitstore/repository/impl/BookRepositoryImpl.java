@@ -1,6 +1,6 @@
 package com.github.yerasis.talkitstore.repository.impl;
 
-import com.github.yerasis.talkitstore.model.Book;
+import com.github.yerasis.talkitstore.model.library.Book;
 import com.github.yerasis.talkitstore.repository.BooksRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;

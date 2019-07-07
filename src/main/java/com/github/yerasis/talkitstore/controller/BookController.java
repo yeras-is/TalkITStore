@@ -1,7 +1,7 @@
 package com.github.yerasis.talkitstore.controller;
 
 import com.github.yerasis.talkitstore.business.BookBusiness;
-import com.github.yerasis.talkitstore.model.Book;
+import com.github.yerasis.talkitstore.model.library.Book;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;

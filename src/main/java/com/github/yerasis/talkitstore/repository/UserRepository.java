@@ -1,6 +1,6 @@
 package com.github.yerasis.talkitstore.repository;
 
-import com.github.yerasis.talkitstore.model.User;
+import com.github.yerasis.talkitstore.model.social.User;
 
 import java.util.List;
 import java.util.Map;

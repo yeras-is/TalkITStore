@@ -1,6 +1,6 @@
 package com.github.yerasis.talkitstore.repository.impl;
 
-import com.github.yerasis.talkitstore.model.User;
+import com.github.yerasis.talkitstore.model.social.User;
 import com.github.yerasis.talkitstore.repository.UserRepository;
 import com.github.yerasis.talkitstore.service.SqlMapper;
 import lombok.RequiredArgsConstructor;
@@ -34,17 +34,21 @@ public class UserRepositoryImpl implements UserRepository {
   @Override
   public List<User> getUsers(Map<String, Object> params) {
     String sql = SqlMapper.sqlConstructor(new User(), params);
-    return jdbcTemplate.query(sql,this::mapRowToUser);
+    return jdbcTemplate.query(sql, this::mapRowToUser);
   }
 
   @Override
   public int deleteUser(int id) {
-    throw new IllegalArgumentException("not impl");
+    return jdbcTemplate.update("update \"user\" set actual=false where id=?", id);
   }
 
   @Override
   public int updateUser(User user) {
-    throw new IllegalArgumentException("not impl");
+    return jdbcTemplate.update("update \"user\" set firstname=?, lastname=?," +
+        "role=?,email=?,phone=?,cash=?,actual=?,password=? where id=?",
+      user.getFirstName(), user.getLastName(), user.getRole(), user.getEmail(),
+      user.getPhone(), user.getCash(), user.getActual(), user.getPassword(),
+      user.getId());
   }
 
   private User mapRowToUser(ResultSet rs, int id) throws SQLException {
